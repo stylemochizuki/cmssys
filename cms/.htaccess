@@ -1,0 +1,31 @@
+# Link
+Options FollowSymLinks
+
+# Rewrite ON
+RewriteEngine on
+
+# Base Path
+RewriteBase /~labo/cms
+
+# Maintenance
+# RewriteCond %{TIME} <201308010000.*
+RewriteCond %{REQUEST_FILENAME} !(error-503.php|\.(gif|jpe?g|png|js|css))$
+RewriteCond %{REMOTE_ADDR} !=183.77.254.68
+RewriteCond %{REMOTE_ADDR} !^192.168.11.\d+$
+RewriteRule ^.*$ error-503.php [L]
+
+# */index.??? -> /
+RewriteRule ^(.*)index\.(html?|ph[p3])$ $1 [R=301,L]
+
+# /login/ -> /
+RewriteRule ^login/?$ ./ [R=301,L]
+
+# /(1)/(2)... -> (1).php?argv=(2)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\\/:*?"<>]+)((/[^/]+)*)/?$ $1.php?argv=$2
+
+# 404 Not Found
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^.*$ error-404.php [L]
