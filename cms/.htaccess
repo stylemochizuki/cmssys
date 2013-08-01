@@ -5,7 +5,7 @@ Options FollowSymLinks
 RewriteEngine on
 
 # Base Path
-RewriteBase /~labo/cms
+RewriteBase /~cms/cms
 
 # Maintenance
 # RewriteCond %{TIME} <201308010000.*
