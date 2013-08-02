@@ -193,7 +193,7 @@ class Database
 	 * @param int   $total 総データ件数
 	 * @return array データ
 	 */
-	public function get( $param = array() , &$total )
+	public function get( $param = array() , &$total = null )
 	{
 		/* -- 変数 -- */
 

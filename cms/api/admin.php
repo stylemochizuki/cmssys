@@ -19,7 +19,7 @@
 /* -- ▽ 設定 ▽ -- */
 
 /** @var string BASEパス( ホストからの位置 ) */
-define( 'HOST_ADDRESS' , "/~labo/cms" );
+define( 'HOST_ADDRESS' , "/~cms/cms" );
 
 /** @var string 基本文字コードタイプ */
 define( 'CHAR_CODE' , "UTF-8" );

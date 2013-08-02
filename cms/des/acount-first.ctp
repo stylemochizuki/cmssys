@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 	<meta charset="utf-8">
-	<title>ログイン｜CMS(カスタム・マネジメント・システム)</title>
+	<title>ユーザー情報入力｜CMS(カスタム・マネジメント・システム)</title>
 	<base href="<?php echo $_URL[ 'ROOT' ]; ?>">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/jquery-1.8.3.min.js"></script>
@@ -12,18 +12,12 @@
 <div class="container" style="padding-top: 40px">
 	<div class="hero-unit">
 		<div class="row-fluid">
-			<!-- ▽ タイトル ▽ -->
+			<!-- ▽ 入力 ▽ -->
 			<div class="span9" style="border-right:1px solid #ddd">
-				<h3>カスタム・マネジメント・システム</h3>
-				<h1>CMS</h1>
-				<p style="margin-top: 1em">
-					CMS(カスタム・マネジメント・システム)のログイン画面です。<br>
-					アカウントがない方は新規作成からアカウントを作成してください。
-				</p>
-				<!-- a href="acount-new/" class="btn btn-primary btn-large"><i class="icon-pencil icon-white"></i> 新規作成</a -->
-				<a href="reminde/" class="btn btn-info btn-large"><i class="icon-question-sign icon-white"></i> 忘れた方はこちら</a>
+				<h3>ユーザー情報入力</h3>
+				<input type="text" name="id" value="<?php echo html4( $id ); ?>" placeholder="ユーザーID" required>
 			</div>
-			<!-- △ タイトル △ -->
+			<!-- △ 入力 △ -->
 	
 			<!-- ▽ ログイン ▽ -->
 			<div class="span3">

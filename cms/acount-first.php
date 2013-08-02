@@ -28,20 +28,11 @@ $_SESSION[ 'user' ] = array();
 
 // ユーザー
 $db = new Database( "user" );
-// ユーザーがいない
-if ( !$db->is() ) {
-	header( "Location: " . $_URL[ 'ROOT' ] . "acount-first/" );
+// ユーザーが居る場合
+if ( $db->is() ) {
+	header( "Location: " . $_URL[ 'ROOT' ] );
 	exit();
 }
-
-// Cookie
-if ( isset( $_COOKIE[ 'id' ] ) ) $id = $_COOKIE[ 'id' ];
-if ( isset( $_COOKIE[ 'password' ] ) ) $password = $_COOKIE[ 'password' ];
-if ( isset( $_COOKIE[ 'checked' ] ) ) $checked = $_COOKIE[ 'checked' ];
-// POST
-if ( isset( $_POST[ 'id' ] ) ) $id = $_POST[ 'id' ];
-if ( isset( $_POST[ 'password' ] ) ) $password = $_POST[ 'password' ];
-if ( isset( $_POST[ 'checked' ] ) ) $checked = $_POST[ 'checked' ];
 
 // 入力がある
 if ( isset( $id{ 0 } ) ) {
